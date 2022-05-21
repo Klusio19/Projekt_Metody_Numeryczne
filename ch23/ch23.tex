@@ -329,11 +329,8 @@ The first, \texttt{detect}, specifies that MATLAB should detect the event when t
 variable \texttt{y(1)} equals zero-that is, when the height x = 0. The second, \texttt{stopint}, is set to 1.
 This instructs MATLAB to stop when the event occurs. The final variable, \texttt{direction}, is set to 0 if all zeros are to be detected (this is the default), +1 if only the zeros where the
 event function increases are to be detected, and -1 if only the zeros where the event function decreases are to be detected. In our case, because the direction of the approach to zero
-is unimportant, we set \texttt{direction} to zero.\textsuperscript{1}
-\vspace{5mm}
-
-\noindent \small {(1. Note that, as mentioned previously, we might want to detect a nonzero event. For example, we might want to
-detect when the jumper reached x = 5. To do this, we would merely set detect = y(1) - 5.)} %TODO (KOSMETYCZNE) Zrobić prawdziwy odnośnik na dole strony.
+is unimportant, we set \texttt{direction} to zero.\footnote[1]{Note that, as mentioned previously, we might want to detect a nonzero event. For example, we might want to
+detect when the jumper reached x = 5. To do this, we would merely set detect = y(1) - 5.}
 
 Finally, a script can be developed to generate the solution:
 
