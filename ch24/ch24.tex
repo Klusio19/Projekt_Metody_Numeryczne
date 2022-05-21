@@ -1,0 +1,53 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+\chapter{Boundary-Value Problems}
+
+\begin{center}
+    \Large{\textbf{CHAPTER OBJECTIVES}}
+\end{center}
+The primary objective of this chapter is to introduce you to solving boundary-value
+problems for ODEs. Specific objectives and topics covered are
+\begin{itemize}
+    \item Understanding the difference between initial-value and boundary-value problems
+    \item Knowing how to express an nth-order ODE as a system of n first-order ODEs.
+    \item Knowing how to implement the shooting method for linear ODEs by using linear
+    interpolation to generate accurate ``shots.''
+    \item Understanding how derivative boundary conditions are incorporated into the
+    shooting method.
+    \item Knowing how to solve nonlinear ODEs with the shooting method by using root
+    location to generate accurate ``shots.''
+    \item Knowing how to implement the finite-difference method.
+    \item Understanding how derivative boundary conditions are incorporated into the
+    finite-difference method.
+    \item Knowing how to solve nonlinear ODEs with the finite-difference method by using
+    root-location methods for systems of nonlinear algebraic equations.
+\end{itemize}
+
+\newpage
+
+\large{\textbf{You've got a problem.}}
+
+\noindent To this point, we have been computing the velocity of a free-falling bungee jumper by
+integrating a single ODE:
+
+\begin{equation}
+    \tag{24.1}
+    \frac{d v}{d t}=g-\frac{c_{d}}{m} v^{2}
+\end{equation}
+
+Suppose that rather than velocity, you are asked to determine the position of the jumper as
+a function of time. One way to do this is to recognize that velocity is the first derivative of distance:
+
+\begin{equation}
+    \tag{24.2}
+    \frac{dx}{dt} = v
+\end{equation}
+
+\noindent Thus, by solving the system of two ODEs represented by Eqs. (24.1) and (24.2), we can
+simultaneously determine both the velocity and the position.
+
+However, because we are now integrating two ODEs, we require two conditions to
+obtain the solution. We are already familiar with one way to do this for the case where we
+have values for both position and velocity at the initial time:
+\end{document}
