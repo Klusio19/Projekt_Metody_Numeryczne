@@ -445,7 +445,7 @@ iterations at the previous time steps. The iterations are terminated based on an
 \noindent When $|\varepsilon_a|$ is less than a prespecified error tolerance $\varepsilon_s$, the iterations are terminated. At this point, $j = m$. The use of Eqs. (23.7) through (23.9) to solve an ODE is demonstrated in the following example.
 
 \begin{exmp}
-    Non-Self-Starting Heun's Method
+    \textbf{Non-Self-Starting Heun's Method}
 
     \noindent \textit{Problem statement.} Use the non-self-starting Heun method to perform the same computations as were performed previously in Example 22.2 using Heun's method. That is,
     integrate $y' = 4e\textsuperscript{0.8t} - 0.5y$ from $t = 0$ to 4 with a step size of 1. As with Example 22.2,
@@ -542,7 +542,7 @@ where $\xi$ is now between $t_{i-1}$ and $t_{i}$. Now, dividing Eq. (23.14) by 5
 \noindent Thus, we have arrived at a relationship that can be used to estimate the per-step truncation error on the basis of two quantities that are routine by-products of the computation: the predictor $\left(y_{i+1}^{0}\right)$ and the corrector $\left(y_{i+1}^{m}\right)$.
 
 \begin{exmp}
-    Estimate of Per-Step Truncation Error
+    \textbf{Estimate of Per-Step Truncation Error}
 
     \noindent \textit{Problem Statement.} Use Eq. (23.16) to estimate the per-step truncation error of Example 23.3. Note that the true values at t = 1 and 2 are 6.194631 and 14.84392, respectively.
 
@@ -653,7 +653,7 @@ Rather than using explicit approaches, implicit methods offer an alternative rem
 \noindent For this case, regardless of the size of the step, $\left|y_{i}\right| \rightarrow 0$ as $i \rightarrow \infty$. Hence, the approach is \textit{called unconditionally stable}.
 
 \begin{exmp}
-    Explicit and Implicit Euler
+    \textbf{Explicit and Implicit Euler}
 
     \noindent \textit{Problem statement.} Use both the explicit and implicit Euler methods to solve Eq. (23.17), where y(0) = 0. \textbf{(a)} Use the explicit Euler with step sizes of 0.0005 and 0.0015 to solve for
     y between t = 0 and 0.006. \textbf{(b)} Use the implicit Euler with a step size of 0.05 to solve for y
