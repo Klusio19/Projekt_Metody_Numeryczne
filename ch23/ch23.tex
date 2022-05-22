@@ -163,7 +163,7 @@ anonymous function, \texttt{ode45} can be used to generate the same result numer
 As described in the following example, the ODE is typically stored in its own M-file when
 dealing with systems of equations.
 
-\begin{example} \textbf{Using MATLAB to Solve a System of ODEs}
+\begin{exmp} \textbf{Using MATLAB to Solve a System of ODEs}
 
     \noindent\textit{Problem Statement.} Employ \texttt{ode45} to solve the following set of nonlinear ODEs from $t$ = 0 to 20:
     \begin{equation}
@@ -215,7 +215,7 @@ In addition to a time series plot, it is also instructive to generate a \textit{
    \caption{\textsf{State-space plot of predator-prey model with MATLAB.\
    }}\label{fig:fig_23_3}
 \end{figure}
-\end{example}
+\end{exmp}
 
 As in the previous example, the MATLAB solver uses default parameters to control various aspects of the integration. In addition, there is also no control over the differential equations'parameters. To have control over these features, additional arguments are included as in
 
@@ -1005,165 +1005,171 @@ knowledge of the problems they are solving.
 \vspace{5mm}
 \section{PROBLEMS}
 
-\noindent \textbf{23.1} Repeat the same simulations as in Section $23.5$ for Pliny's fountain, but generate the solutions with \texttt{ode23}, \texttt{ode23s}, and \texttt{ode113}. Use subplot to develop a vertical three-pane plot of the time series.\vspace{2mm}
+\begin{multicols}{2}
+    \noindent \textbf{23.1} Repeat the same simulations as in Section $23.5$ for Pliny's fountain, but generate the solutions with \texttt{ode23}, \texttt{ode23s}, and \texttt{ode113}. Use subplot to develop a vertical three-pane plot of the time series.\vspace{2mm}
 
-\noindent \textbf{23.2} The following ODEs have been proposed as a model of an epidemic:
-$$
-\begin{aligned}
-\frac{d S}{d t} &=-a S I \\
-\frac{d I}{d t} &=a S I-r I \\
-\frac{d R}{d t} &=r I
-\end{aligned}
-$$
-where $S=$ the susceptible individuals, $I=$ the infected, $R=$ the recovered, $a=$ the infection rate, and $r=$ the recovery rate. A city has 10,000 people, all of whom are susceptible.
+    \noindent \textbf{23.2} The following ODEs have been proposed as a model of an epidemic:
+    $$
+    \begin{aligned}
+    \frac{d S}{d t} &=-a S I \\
+    \frac{d I}{d t} &=a S I-r I \\
+    \frac{d R}{d t} &=r I
+    \end{aligned}
+    $$
+    where $S=$ the susceptible individuals, $I=$ the infected, $R=$ the recovered, $a=$ the infection rate, and     $r=$ the recovery rate. A city has 10,000 people, all of whom are susceptible.
 
-\noindent\textbf{(a)} If a single infectious individual enters the city at $t=0$, compute the progression of the epidemic until the number of infected individuals falls below 10 . Use the following parameters: $a=0.002 /$ (person $\cdot$ week) and $r=0.15 / \mathrm{d}$. Develop time-series plots of all the state variables. Also generate a phase-plane plot of $S$ versus $I$ versus $R$.
+    \noindent\textbf{(a)} If a single infectious individual enters the city at $t=0$, compute the progression of    the epidemic until the number of infected individuals falls below 10 . Use the following parameters: $a=0.002  /$ (person $\cdot$ week) and $r=0.15 / \mathrm{d}$. Develop time-series plots of all the state variables.    Also generate a phase-plane plot of $S$ versus $I$ versus $R$.
 
-\noindent\textbf{(b)} Suppose that after recovery, there is a loss of immunity that causes recovered individuals to become susceptible. This reinfection mechanism can be computed as $\rho R$, where $\rho=$ the reinfection rate. Modify the model to include this mechanism and repeat the computations in (a) using $\rho=0.03 / \mathrm{d}$.\vspace{2mm}
+    \noindent\textbf{(b)} Suppose that after recovery, there is a loss of immunity that causes recovered    individuals to become susceptible. This reinfection mechanism can be computed as $\rho R$, where $\rho=$ the   reinfection rate. Modify the model to include this mechanism and repeat the computations in (a) using $\rho=0.    03 / \mathrm{d}$.\vspace{2mm}
 
-\noindent \textbf{23.3} Solve the following initial-value problem over the interval from $t=2$ to 3 :
-$$
-\frac{d y}{d t}=-0.5 y+e^{-t}
-$$
-Use the non-self-starting Heun method with a step size of $0.5$ and initial conditions of $y(1.5)=5.222138$ and $y(2.0)=4.143883$. Iterate the corrector to $\varepsilon_{s}=0.1 \%$. Compute the percent relative errors for your results based on the exact solutions obtained analytically: $y(2.5)=3.273888$ and $y(3.0)=2.577988$.\vspace{2mm}
+    \noindent \textbf{23.3} Solve the following initial-value problem over the interval from $t=2$ to 3 :
+    $$
+    \frac{d y}{d t}=-0.5 y+e^{-t}
+    $$
+    Use the non-self-starting Heun method with a step size of $0.5$ and initial conditions of $y(1.5)=5.222138$     and $y(2.0)=4.143883$. Iterate the corrector to $\varepsilon_{s}=0.1 \%$. Compute the percent relative errors   for your results based on the exact solutions obtained analytically: $y(2.5)=3.273888$ and $y(3.0)=2.577988$. \vspace{2mm}
 
-\noindent \textbf{23.4} Solve the following initial-value problem over the interval from $t=0$ to $0.5$ :
-$$
-\frac{d y}{d t}=y t^{2}-y
-$$
-Use the fourth-order RK method to predict the first value at $t=0.25$. Then use the non-self-starting Heun method to make the prediction at $t=0.5$. Note: $y(0)=1$.\vspace{2mm}
+    \noindent \textbf{23.4} Solve the following initial-value problem over the interval from $t=0$ to $0.5$ :
+    $$
+    \frac{d y}{d t}=y t^{2}-y
+    $$
+    Use the fourth-order RK method to predict the first value at $t=0.25$. Then use the non-self-starting Heun method to make the prediction at $t=0.5$. Note: $y(0)=1$.\vspace{2mm}
 
-\noindent \textbf{23.5} Given
-$$
-\frac{d y}{d t}=-100,000 y+99,999 e^{-t}
-$$
-\textbf{(a)} Estimate the step size required to maintain stability using the explicit Euler method.\\
-\textbf{(b)} If $y(0)=0$, use the implicit Euler to obtain a solution from $t=0$ to 2 using a step size of $0.1$.\vspace{2mm}
+    \noindent \textbf{23.5} Given
+    $$
+    \frac{d y}{d t}=-100,000 y+99,999 e^{-t}
+    $$
+    \textbf{(a)} Estimate the step size required to maintain stability using the explicit Euler method.\\
+    \textbf{(b)} If $y(0)=0$, use the implicit Euler to obtain a solution from $t=0$ to 2 using a step size of $0.  1$.\vspace{2mm}
 
-\noindent \textbf{23.6} Given
-$$
-\frac{d y}{d t}=30(\sin t-y)+3 \cos t
-$$
-If $y(0)=0$, use the implicit Euler to obtain a solution from $t=0$ to 4 using a step size of $0.4$.\vspace{2mm}
+    \noindent \textbf{23.6} Given
+    $$
+    \frac{d y}{d t}=30(\sin t-y)+3 \cos t
+    $$
+    If $y(0)=0$, use the implicit Euler to obtain a solution from $t=0$ to 4 using a step size of $0.4$.\vspace {2mm}
 
-\noindent \textbf{23.7} Given
-$$
-\begin{aligned}
-&\frac{d x_{1}}{d t}=999 x_{1}+1999 x_{2} \\
-&\frac{d x_{2}}{d t}=-1000 x_{1}-2000 x_{2}
-\end{aligned}
-$$
-If $x_{1}(0)=x_{2}(0)=1$, obtain a solution from $t=0$ to $0.2$ using a step size of $0.05$ with the \textbf{(a)} explicit and \textbf{(b)} implicit Euler methods.\vspace{2mm}
+    \noindent \textbf{23.7} Given
+    $$
+    \begin{aligned}
+    &\frac{d x_{1}}{d t}=999 x_{1}+1999 x_{2} \\
+    &\frac{d x_{2}}{d t}=-1000 x_{1}-2000 x_{2}
+    \end{aligned}
+    $$
+    If $x_{1}(0)=x_{2}(0)=1$, obtain a solution from $t=0$ to $0.2$ using a step size of $0.05$ with the \textbf{   (a)} explicit and \textbf{(b)} implicit Euler methods.\vspace{2mm}
 
-\noindent \textbf{23.8} The following nonlinear, parasitic ODE was suggested by Hornbeck (1975):
-$$
-\frac{d y}{d t}=5\left(y-t^{2}\right)
-$$
-If the initial condition is $y(0)=0.08$, obtain a solution from $t=0$ to 5 :
-\textbf{(a)} Analytically.\\
-\textbf{(b)} Using the fourth-order RK method with a constant step size of $0.03125$.\\
-\textbf{(c)} Using the MATLAB function \texttt{ode45}.\\
-\textbf{(d)} Using the MATLAB function \texttt{ode23s}.\\
-\textbf{(e)} Using the MATLAB function \texttt{ode23tb}.\\
-Present your results in graphical form.\vspace{2mm}
+    \noindent \textbf{23.8} The following nonlinear, parasitic ODE was suggested by Hornbeck (1975):
+    $$
+    \frac{d y}{d t}=5\left(y-t^{2}\right)
+    $$
+    If the initial condition is $y(0)=0.08$, obtain a solution from $t=0$ to 5 :
+    \textbf{(a)} Analytically.\\
+    \textbf{(b)} Using the fourth-order RK method with a constant step size of $0.03125$.\\
+    \textbf{(c)} Using the MATLAB function \texttt{ode45}.\\
+    \textbf{(d)} Using the MATLAB function \texttt{ode23s}.\\
+    \textbf{(e)} Using the MATLAB function \texttt{ode23tb}.\\
+    Present your results in graphical form.\vspace{2mm}
 
-\noindent \textbf{23.9} Recall from Example $20.5$ that the following \texttt{humps} function exhibits both flat and steep regions over a relatively short $x$ range,
-$$
-f(x)=\frac{1}{(x-0.3)^{2}+0.01}+\frac{1}{(x-0.9)^{2}+0.04}-6
-$$
-Determine the value of the definite integral of this function between $x=0$ and 1 using \textbf{(a)} the quad and \textbf{(b)} the \texttt{ode45} functions.\vspace{2mm}
+    \noindent \textbf{23.9} Recall from Example $20.5$ that the following \texttt{humps} function exhibits both     flat and steep regions over a relatively short $x$ range,
+    $$
+    f(x)=\frac{1}{(x-0.3)^{2}+0.01}+\frac{1}{(x-0.9)^{2}+0.04}-6
+    $$
+    Determine the value of the definite integral of this function between $x=0$ and 1 using \textbf{(a)} the \texttt{quad} and \textbf{(b)} the \texttt{ode45} functions.\vspace{2mm}
 
-\noindent\textbf{23.10} The oscillations of a swinging pendulum can be simulated with the following nonlinear model:
-$$
-\frac{d^{2} \theta}{d t^{2}}+\frac{g}{l} \sin \theta=0
-$$
-where $\theta=$ the angle of displacement, $g=$ the gravitational constant, and $l=$ the pendulum length. For small angular displacements, the $\sin \theta$ is approximately equal to $\theta$ and the model can be linearized as
-$$
-\frac{d^{2} \theta}{d t^{2}}+\frac{g}{l} \theta=0
-$$
-Use \texttt{ode45} to solve for $\theta$ as a function of time for both the linear and nonlinear models where $l=0.6 \mathrm{~m}$ and $g=9.81 \mathrm{~m} / \mathrm{s}^{2}$. First, solve for the case where the initial condition is for a small displacement $(\theta=\pi / 8$ and $d \theta / d t=0)$. Then repeat the calculation for a large displacement $(\theta=\pi / 2)$. For each case, plot the linear and nonlinear simulations on the same plot.\vspace{2mm}
+    \noindent\textbf{23.10} The oscillations of a swinging pendulum can be simulated with the following nonlinear   model:
+    $$
+    \frac{d^{2} \theta}{d t^{2}}+\frac{g}{l} \sin \theta=0
+    $$
+    where $\theta=$ the angle of displacement, $g=$ the gravitational constant, and $l=$ the pendulum length. For   small angular displacements, the $\sin \theta$ is approximately equal to $\theta$ and the model can be    linearized as
+    $$
+    \frac{d^{2} \theta}{d t^{2}}+\frac{g}{l} \theta=0
+    $$
+    Use \texttt{ode45} to solve for $\theta$ as a function of time for both the linear and nonlinear models where   $l=0.6 \mathrm{~m}$ and $g=9.81 \mathrm{~m} / \mathrm{s}^{2}$. First, solve for the case where the initial    condition is for a small displacement $(\theta=\pi / 8$ and $d \theta / d t=0)$. Then repeat the calculation   for a large displacement $(\theta=\pi / 2)$. For each case, plot the linear and nonlinear simulations on the  same plot.\vspace{2mm}
 
-\noindent\textbf{23.11} Employ the events option described in Section $23.1 .2$ to determine the period of a $1-\mathrm{m}$ long, linear pendulum (see description in Prob. 23.10). Compute the period for the following initial conditions: \textbf{(a)} $\theta=\pi / 8$, \textbf{(b)} $\theta=\pi / 4$, and \textbf{(c)} $\theta=\pi / 2$.
-For all three cases, set the initial angular velocity at zero. (\textbf{Hint:} A good way to compute the period is to determine how long it takes for the pendulum to reach $\theta=0$ [i.e., the bottom of its arc]). The period is equal to four times this value.\vspace{2mm}
+    \noindent\textbf{23.11} Employ the events option described in Section $23.1 .2$ to determine the period of a    $1-\mathrm{m}$ long, linear pendulum (see description in Prob. 23.10). Compute the period for the following    initial conditions: \textbf{(a)} $\theta=\pi / 8$, \textbf{(b)} $\theta=\pi / 4$, and \textbf{(c)}     $\theta=\pi / 2$.
+    For all three cases, set the initial angular velocity at zero. (\textbf{Hint:} A good way to compute the    period is to determine how long it takes for the pendulum to reach $\theta=0$ [i.e., the bottom of its arc]).  The period is equal to four times this value.\vspace{2mm}
 
-\noindent\textbf{23.12} Repeat Prob. 23.11, but for the nonlinear pendulum described in Prob. 23.10.\vspace{2mm}
+    \noindent\textbf{23.12} Repeat Prob. 23.11, but for the nonlinear pendulum described in Prob. 23.10.\vspace {2mm}
 
-\noindent\textbf{23.13} The following system is a classic example of stiff ODEs that can occur in the solution of chemical reaction kinetics:
-$$
-\begin{aligned}
-\frac{d c_{1}}{d t} &=-0.013 c_{1}-1000 c_{1} c_{3} \\
-\frac{d c_{2}}{d t} &=-2500 c_{2} c_{3} \\
-\frac{d c_{3}}{d t} &=-0.013 c_{1}-1000 c_{1} c_{3}-2500 c_{2} c_{3}
-\end{aligned}
-$$
-Solve these equations from $t=0$ to 50 with initial conditions $c_{1}(0)=c_{2}(0)=1$ and $c_{3}(0)=0$. If you have access to MATLAB software, use both standard (e.g., \texttt{ode45} ) and stiff (e.g., \texttt{ode23s} ) functions to obtain your solutions.\vspace{2mm}
+    \noindent\textbf{23.13} The following system is a classic example of stiff ODEs that can occur in the   solution of chemical reaction kinetics:
+    $$
+    \begin{aligned}
+    \frac{d c_{1}}{d t} &=-0.013 c_{1}-1000 c_{1} c_{3} \\
+    \frac{d c_{2}}{d t} &=-2500 c_{2} c_{3} \\
+    \frac{d c_{3}}{d t} &=-0.013 c_{1}-1000 c_{1} c_{3}-2500 c_{2} c_{3}
+    \end{aligned}
+    $$
+    Solve these equations from $t=0$ to 50 with initial conditions $c_{1}(0)=c_{2}(0)=1$ and $c_{3}(0)=0$. If you   have access to MATLAB software, use both standard (e.g., \texttt{ode45} ) and stiff (e.g., \texttt{ode23s} )  functions to obtain your solutions.\vspace{2mm}
 
-\noindent\textbf{23.14} The following second-order ODE is considered to be stiff:
-$$
-\frac{d^{2} y}{d x^{2}}=-1001 \frac{d y}{d x}-1000 y
-$$
-Solve this differential equation (a) analytically and 
-(b) numerically for x = 0 to 5. For (b) use an implicit
-approach with h = 0.5. Note that the initial conditions are
-y(0) = 1 and $y'$(0) = 0. Display both results graphically.\vspace{2mm}
+    \noindent\textbf{23.14} The following second-order ODE is considered to be stiff:
+    $$
+    \frac{d^{2} y}{d x^{2}}=-1001 \frac{d y}{d x}-1000 y
+    $$
+    Solve this differential equation (a) analytically and 
+    (b) numerically for x = 0 to 5. For (b) use an implicit
+    approach with h = 0.5. Note that the initial conditions are
+    y(0) = 1 and $y'$(0) = 0. Display both results graphically.\vspace{2mm}
 
-\noindent\textbf{23.15} Consider the thin rod of length $l$ moving in the $x-y$ plane as shown in Fig. P23.15. The rod is fixed with a pin on one end and a mass at the other. Note that $g=9.81 \mathrm{~m} / \mathrm{s}^{2}$ and $l=0.5 \mathrm{~m}$. This system can be solved using
-$$
-\ddot{\theta}-\frac{g}{l} \theta=0
-$$
-Let $\theta(0)=0$ and $\dot{\theta}(0)=0.25 \mathrm{rad} / \mathrm{s}$. Solve using any method studied in this chapter. Plot the angle versus time and the angular velocity versus time. (\textbf{Hint:} Decompose the secondorder ODE.)
+    \noindent\textbf{23.15} Consider the thin rod of length $l$ moving in the $x-y$ plane as shown in Fig. P23. 15. The rod is fixed with a pin on one end and a mass at the other. Note that $g=9.81 \mathrm{~m} / \mathrm{s}   ^{2}$ and $l=0.5 \mathrm{~m}$. This system can be solved using
+    $$
+    \ddot{\theta}-\frac{g}{l} \theta=0
+    $$
+    Let $\theta(0)=0$ and $\dot{\theta}(0)=0.25 \mathrm{rad} / \mathrm{s}$. Solve using any method studied in   this chapter. Plot the angle versus time and the angular velocity versus time. (\textbf{Hint:} Decompose the  secondorder ODE.)
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.4]{fig_P_23_15}
-    \label{fig:fig_P_23_15}
-\end{figure}\vspace{2mm}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.4]{fig_P_23_15}
+        \caption{\textsf{}}
+        \label{fig:fig_P_23_15} %TODO wyświetlanie odpowiedniego(!) podpisu obrazka
+    \end{figure}\vspace{2mm}
 
-\noindent\textbf{23.16} Given the first-order ODE:
-$$
-\begin{aligned}
-&\frac{d x}{d t}=-700 x-1000 e^{-t} \\
-&x(t=0)=4
-\end{aligned}
-$$
-Solve this stiff differential equation using a numerical method over the time period $0 \leq t \leq 5$. Also solve analytically and plot the analytic and numerical solution for both the fast transient and slow transition phase of the time scale.\vspace{2mm}
+    \noindent\textbf{23.16} Given the first-order ODE:
+    $$
+    \begin{aligned}
+    &\frac{d x}{d t}=-700 x-1000 e^{-t} \\
+    &x(t=0)=4
+    \end{aligned}
+    $$
+    Solve this stiff differential equation using a numerical method over the time period $0 \leq t \leq 5$. Also    solve analytically and plot the analytic and numerical solution for both the fast transient and slow   transition phase of the time scale.\vspace{2mm}
 
-\noindent\textbf{23.17} Solve the following differential equation from $t=0$ to 2
-$$
-\frac{d y}{d t}=-10 y
-$$
-with the initial condition $y(0)=1$. Use the following techniques to obtain your solutions: \textbf{(a)} analytically, \textbf{(b)} the explicit Euler method, and \textbf{(c)} the implicit Euler method. For \textbf{(b)} and \textbf{(c)} use $h=0.1$ and 0.2. Plot your results.\vspace{2mm}
+    \noindent\textbf{23.17} Solve the following differential equation from $t=0$ to 2
+    $$
+    \frac{d y}{d t}=-10 y
+    $$
+    with the initial condition $y(0)=1$. Use the following techniques to obtain your solutions: \textbf{(a)}    analytically, \textbf{(b)} the explicit Euler method, and \textbf{(c)} the implicit Euler method. For \textbf{ (b)} and \textbf{(c)} use $h=0.1$ and 0.2. Plot your results.\vspace{2mm}
 
-\noindent\textbf{23.18} The Lotka-Volterra equations described in Section $22.6$ have been refined to include additional factors that impact predator-prey dynamics. For example, over and above predation, prey population can be limited by other factors such as space. Space limitation can be incorporated into the model as a carrying capacity (recall the logistic model described in Prob. 22.5) as in
-$$
-\begin{aligned}
-\frac{d x}{d t} &=a\left(1-\frac{x}{K}\right) x-b x y \\
-\frac{d y}{d t} &=-c y+d x y
-\end{aligned}
-$$
-where $K=$ the carrying capacity. Use the same parameter values and initial conditions as in Section $22.6$ to integrate these equations from $t=0$ to 100 using \texttt{ode45}, and develop both time series and phase plane plots of the results.
-\textbf{(a)} Employ a very large value of $K=10^{8}$ to validate that you obtain the same results as in Section 22.6.
-\textbf{(b)} Compare \textbf{(a)} with the more realistic carrying capacity of $K=200$. Discuss your results.\vspace{2mm}
+    \noindent\textbf{23.18} The Lotka-Volterra equations described in Section $22.6$ have been refined to include   additional factors that impact predator-prey dynamics. For example, over and above predation, prey population     can be limited by other factors such as space. Space limitation can be incorporated into the model as a     carrying capacity (recall the logistic model described in Prob. 22.5) as in
+    $$
+    \begin{aligned}
+    \frac{d x}{d t} &=a\left(1-\frac{x}{K}\right) x-b x y \\
+    \frac{d y}{d t} &=-c y+d x y
+    \end{aligned}
+    $$
+    where $K=$ the carrying capacity. Use the same parameter values and initial conditions as in Section $22.6$     to integrate these equations from $t=0$ to 100 using \texttt{ode45}, and develop both time series and phase     plane plots of the results.
+    \textbf{(a)} Employ a very large value of $K=10^{8}$ to validate that you obtain the same results as in     Section 22.6.
+    \textbf{(b)} Compare \textbf{(a)} with the more realistic carrying capacity of $K=200$. Discuss your results.   \vspace{2mm}
 
-\noindent\textbf{23.19} Two masses are attached to a wall by linear springs (Fig. P23.19). Force balances based on Newton's second law can be written as
+    \noindent\textbf{23.19} Two masses are attached to a wall by linear springs (Fig. P23.19). Force balances   based on Newton's second law can be written as
+    $$
+    \begin{aligned}
+    &\frac{d^{2} x_{1}}{d t^{2}}=-\frac{k_{1}}{m_{1}}\left(x_{1}-L_{1}\right)+\frac{k_{2}}{m_{1}}\left(x_{2}-x_{1}  -w_{1}-L_{2}\right) \\
+    &\frac{d^{2} x_{2}}{d t^{2}}=-\frac{k_{2}}{m_{2}}\left(x_{2}-x_{1}-w_{1}-L_{2}\right)
+    \end{aligned}
+    $$
+    where $k=$ the spring constants, $m=$ mass, $L=$ the length of the unstretched spring, and $w=$ the width of    the mass. Compute the positions of the masses as a function of time using the following parameter values: $k_  {1}=k_{2}=5, m_{1}=m_{2}=2$, $w_{1}=w_{2}=5$, and $L_{1}=L_{2}=2$.
+    Set the initial conditions as $x_{1}=L_{1}$ and $x_{2}=L_{1}+w_{1}+L_{2}+6$. Perform the simulation from    $t=0$ to 20. Construct time-series plots of both the displacements and the velocities. In addition, produce a  phaseplane plot of $x_{1}$ versus $x_{2}$.\vspace{2mm}
 
-$$
-\begin{aligned}
-&\frac{d^{2} x_{1}}{d t^{2}}=-\frac{k_{1}}{m_{1}}\left(x_{1}-L_{1}\right)+\frac{k_{2}}{m_{1}}\left(x_{2}-x_{1}-w_{1}-L_{2}\right) \\
-&\frac{d^{2} x_{2}}{d t^{2}}=-\frac{k_{2}}{m_{2}}\left(x_{2}-x_{1}-w_{1}-L_{2}\right)
-\end{aligned}
-$$
-where $k=$ the spring constants, $m=$ mass, $L=$ the length of the unstretched spring, and $w=$ the width of the mass. Compute the positions of the masses as a function of time using the following parameter values: $k_{1}=k_{2}=5, m_{1}=m_{2}=2$, $w_{1}=w_{2}=5$, and $L_{1}=L_{2}=2$.
-Set the initial conditions as $x_{1}=L_{1}$ and $x_{2}=L_{1}+w_{1}+L_{2}+6$. Perform the simulation from $t=0$ to 20. Construct time-series plots of both the displacements and the velocities. In addition, produce a phaseplane plot of $x_{1}$ versus $x_{2}$.\vspace{2mm}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.3]{fig_P_23_19}
+        \caption{\textsf{}}
+        \label{fig:fig_P_23_19} %TODO wyświetlanie odpowiedniego(!) podpisu obrazka
+    \end{figure}\vspace{2mm}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.3]{fig_P_23_19}
-    \label{fig:fig_P_23_19}
-\end{figure}\vspace{2mm}
+    \noindent \textbf{23.20} Use \texttt{ode45} to integrate the differential equations for the system described    in Prob. 23.19. Generate vertically stacked subplots of displacements (top) and velocities (bottom). Employ    the \texttt{fft} function to compute the discrete Fourier transform (DFT) of the first mass's displacement.    Generate and plot a power spectrum in order to identify the system's resonant frequencies.\vspace{2mm}
 
-\noindent \textbf{23.20} Use \texttt{ode45} to integrate the differential equations for the system described in Prob. 23.19. Generate vertically stacked subplots of displacements (top) and velocities (bottom). Employ the \texttt{fft} function to compute the discrete Fourier transform (DFT) of the first mass's displacement. Generate and plot a power spectrum in order to identify the system's resonant frequencies.\vspace{2mm}
+    \noindent\textbf{23.21} Perform the same computations as in Prob. $23.20$ but for the structure in Prob. 22.22.
 
-\noindent \textbf{23.21} Perform the same computations as in Prob. $23.20$ but for the structure in Prob. 22.22.
-$23.22$ Use the approach and example outlined in Section 23.1.2, but determine the time, height, and velocity when the bungee jumper is the farthest above the ground, and generate a plot of the solution.
+    \noindent\textbf{23.22} Use the approach and example outlined in Section 23.1.2, but determine the time, height, and velocity when the bungee jumper is the farthest above the ground, and generate a plot of the solution.
+
+\end{multicols}
+
 \end{document}
